@@ -1,0 +1,45 @@
+<html>
+
+<head>
+<style>
+input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 8px;
+    height: 175px;
+    padding: 0 5px;
+}
+
+</style>
+</head>
+
+<body>
+
+<input type="range" min="0" max="255" orient="vertical" onchange="update()" onmousemove="update()" id="red" />
+<input type="range" min="0" max="255" orient="vertical" onchange="update()" onmousemove="update()" id="green" />
+<input type="range" min="0" max="255" orient="vertical" onchange="update()" onmousemove="update()" id="blue" />
+<input type="range" min="0" max="255" orient="vertical" onchange="update()" onmousemove="update()" id="brightness" />
+
+<script>
+var x = new XMLHttpRequest();
+
+var R, G, B = 0;
+var BRIGHTNESS = 128;
+
+function update() {
+
+R = parseInt(document.getElementById("red").value);
+G = parseInt(document.getElementById("blue").value);
+B = parseInt(document.getElementById("green").value);
+BRIGHTNESS = parseInt(document.getElementById("brightness").value);
+
+x.open('GET', '/color?r='+R+'&g='+G+'&b='+B+'&brightness='+BRIGHTNESS);
+x.send();
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "neopix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "gpio": "^0.2.7",
+    "rpi-ws281x-native": "^0.4.0",
+    "websocket-neopixels": "0.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
